@@ -2174,3 +2174,180 @@ numpy.loadtxt('Python_Data/inflammation-01.csv', delimiter = ',')
 ```python
 
 ```
+
+## Defensive Programming
+
+```python
+# To make sure our functions do what we want them to do. 
+# Just because there is no error, does not mean the function accomplishes the goal.
+# To do this, we add asssertions to our code. 
+# Assertion: a statement that something must be true at a certain point in the gporam
+# When python sees one, python does the function. If false, it stops.
+```
+
+
+```python
+numbers = [0.5, 2.3, 0.7, -0.001, 4.4]
+total = 0.0
+for num in numbers:
+    assert num > 0.0, 'Data should only contain positive values'
+    total += num
+print('total is:', total)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    AssertionError                            Traceback (most recent call last)
+
+    <ipython-input-3-d596a7ea0a7e> in <module>
+          2 total = 0.0
+          3 for num in numbers:
+    ----> 4     assert num > 0.0, 'Data should only contain positive values'
+          5     total += num
+          6 print('total is:', total)
+
+
+    AssertionError: Data should only contain positive values
+
+
+
+```python
+# Because we told python that data should only contain positve values (assert) we get an assertion error.
+# A lot of code exists to check to make sure the other code is running correctly.
+```
+
+
+```python
+# 3 types of assertions:
+# pre-condition: someting that must be true at the start of a function.
+# post-condition: something is guaranteed to be true at the end of a function.
+# invariant: something must be true at all times during the execution of a function, within a code region.
+
+```
+
+
+```python
+# Example:
+# Assume:
+
+# (x0, y0, x1, y1)
+
+def normalize_rectangle(rect):
+    '''Normalizes a rectangle so that it is at the origin and 1.0 units long on its longest axis.
+    input should be of the format(x0, y0, x1, y1).
+    (x0, y0) and (x1, y1) define the lower left and uppre right corners of the rectangle respectively.'''
+    assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
+    x0, y0, x1, y1 = rect
+    assert x0 < x1, 'Invalid X coordinates'
+    assert y0 < y1, 'Invalid Y coordinates'
+    
+    dx = x1-x0
+    dy = y1-y0
+    if dy > dx:
+        scaled = dy/dx
+        upper_x, upper_y = 1.0, scaled
+    else:
+        scaled = dx/dy
+        upper_x, upper_y = scaled, 1.0
+        
+        assert 0 < upper_x <= 1.0, 'Calculated upper x coordinate invalid'
+        assert 0 < upper_y <= 1.0, 'Calculated upper y coordinate invalid'
+        
+        return(0, 0, upper_x, upper_y)
+```
+
+
+```python
+print(normalize_rectangle((0.0,1.0, 2.0)))
+```
+
+
+    ---------------------------------------------------------------------------
+
+    AssertionError                            Traceback (most recent call last)
+
+    <ipython-input-31-e122f79e7e85> in <module>
+    ----> 1 print(normalize_rectangle((0.0,1.0, 2.0)))
+    
+
+    <ipython-input-24-5236a5df1673> in normalize_rectangle(rect)
+          8     input should be of the format(x0, y0, x1, y1).
+          9     (x0, y0) and (x1, y1) define the lower left and uppre right corners of the rectangle respectively.'''
+    ---> 10     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
+         11     x0, y0, x1, y1 = rect
+         12     assert x0 < x1, 'Invalid X coordinates'
+
+
+    AssertionError: Rectangles must contain 4 coordinates
+
+
+
+```python
+# Assertion error: only contains 3 coordinates
+```
+
+
+```python
+print(normalize_rectangle((4.0, 2.0, 1.0, 5.0 )))
+```
+
+
+    ---------------------------------------------------------------------------
+
+    AssertionError                            Traceback (most recent call last)
+
+    <ipython-input-32-ff4f62975a5e> in <module>
+    ----> 1 print(normalize_rectangle((4.0, 2.0, 1.0, 5.0 )))
+    
+
+    <ipython-input-24-5236a5df1673> in normalize_rectangle(rect)
+         10     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
+         11     x0, y0, x1, y1 = rect
+    ---> 12     assert x0 < x1, 'Invalid X coordinates'
+         13     assert y0 < y1, 'Invalid Y coordinates'
+         14 
+
+
+    AssertionError: Invalid X coordinates
+
+
+
+```python
+# assertion error: x0 is not less than x1
+```
+
+
+```python
+print(normalize_rectangle((0.0, 0.0, 1.0, 5.0)))
+```
+
+    None
+
+
+
+```python
+print(normalize_rectangle((0.0, 0.0, 5.0, 1.0)))
+```
+
+
+    ---------------------------------------------------------------------------
+
+    AssertionError                            Traceback (most recent call last)
+
+    <ipython-input-34-1337bef8f4bf> in <module>
+    ----> 1 print(normalize_rectangle((0.0, 0.0, 5.0, 1.0)))
+    
+
+    <ipython-input-24-5236a5df1673> in normalize_rectangle(rect)
+         22         upper_x, upper_y = scaled, 1.0
+         23 
+    ---> 24         assert 0 < upper_x <= 1.0, 'Calculated upper x coordinate invalid'
+         25         assert 0 < upper_y <= 1.0, 'Calculated upper y coordinate invalid'
+         26 
+
+
+    AssertionError: Calculated upper x coordinate invalid
+
+
+
