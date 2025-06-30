@@ -293,7 +293,7 @@ df.dtypes
 
 
 ```python
-#To view profits that contain anything but 0-9.
+# To view profits that contain anything but 0-9:
 
 non_numeric_profits = df.profit.str.contains('[^0-9.-]')
 df.loc[non_numeric_profits].head() 
