@@ -728,7 +728,7 @@ print('first value in data:', data[0,0])
 
 
 ```python
-# first place in a data array  is 0,0 (not 1,1)
+# Note: The first place in a data array is 0,0 (not 1,1)
 print('middle value in data:', data[29,19])
 
 ```
@@ -739,7 +739,7 @@ print('middle value in data:', data[29,19])
 
 ```python
 print (data[0:4, 0:10])
-# this means start at 0 and go up to 4 (do not include 4) and go up to 10 for columns (don’t include 10)
+# * This means, start at 0 and go up to 4 (do not include 4) and go up to 10 for columns (don’t include 10).
 
 ```
 
@@ -777,7 +777,7 @@ print(small)
 
 
 ```python
-# Let’s use a numpy function
+# Let’s use a numpy function:
 print(numpy.mean(data))
 
 ```
@@ -841,7 +841,7 @@ print(numpy.mean(data, axis = 0))
 
 
 ```python
-# average inflammation of all patients for a given day (column avg)
+# To see the average inflammation of all patients for a given day (column avg):
 print(numpy.mean(data, axis = 0).shape)
 
 ```
@@ -851,7 +851,7 @@ print(numpy.mean(data, axis = 0).shape)
 
 
 ```python
-# to see the average inflammation per person (row avg):
+# To see the average inflammation per person (row avg):
 print(numpy.mean(data, axis =1))
 
 ```
@@ -872,7 +872,7 @@ import matplotlib.pyplot
 
 
 ```python
-# To make image
+# To make image:
 image = matplotlib.pyplot.imshow(data)
 
 ```
@@ -883,14 +883,14 @@ image = matplotlib.pyplot.imshow(data)
 
 
 ```python
-# To show image
+# To show image:
 matplotlib.pyplot.show()
 
 ```
 
 
 ```python
-# you can see that inflammation peaks around day 19 for all patients
+# Note: You can see that inflammation peaks around day 19 for all patients.
 
 # After taking medication, inflammation appears to drop to 0 after 3 weeks.
 ```
@@ -911,12 +911,12 @@ matplotlib.pyplot.show()
 
 
 ```python
-# We can see time (weeks) on x-axis and inflammation on y-axis and inflammation peaks around week 20.
+# We can see time (weeks) on x-axis and inflammation on y-axis and that inflammation peaks around week 20.
 ```
 
 
 ```python
-# to plot the max
+# To plot the max:
 max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis =0))
 matplotlib.pyplot.show()
 
@@ -928,7 +928,7 @@ matplotlib.pyplot.show()
 
 
 ```python
-# to plot the min
+# To plot the min:
 min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis = 0))
 matplotlib.pyplot.show()
 
