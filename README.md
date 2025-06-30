@@ -434,7 +434,7 @@ len(df)
 
 
 ```python
-# To see that profit is now float instead of object:
+# To see that profit is now a float data type instead of object:
 df.dtypes
 ```
 
@@ -524,7 +524,7 @@ fig.tight_layout()
 
 
 ```python
-# Let's save a value to a variable
+# To save a value to a variable example:
 
 weight_kg = 60
 ```
@@ -543,8 +543,8 @@ print(weight_kg)
 
 # Weight0 = valid
 # 0weight = invalid
-# * can't start a variable name with a number# 
-# case sensitive
+# * Note: A variable name cannot start with a number.
+# Also, variable names are case sensitive.
 ```
 
 
@@ -552,9 +552,9 @@ print(weight_kg)
 # Types of Data
 
 # There are 3 common types of data:
-# Integer numbers
-# Floating point numbers (decimal)
-# Strings - not a number value, but may contain a number ID
+# * Integer numbers
+# * Floating point numbers (decimal)
+# * Strings - not a number value, but may contain a number (i.e. ID)
 ```
 
 
@@ -574,7 +574,7 @@ patient_id = '001'
 
 
 ```python
-# Use variables in python
+# To use variables in python example:
 
 weight_lb = 2.2*weight_kg
 ```
@@ -589,7 +589,7 @@ print(weight_lb)
 
 
 ```python
-# Let's add a prefix to our patient id
+# Let's add a prefix to our patient id:
 
 patient_id = 'inflam_' + patient_id
 ```
@@ -604,7 +604,7 @@ print(patient_id)
 
 
 ```python
-# Let's combine print statements
+# To combine print statements:
 
 print(patient_id, 'weight in kilograms:', weight_kg)
 ```
@@ -614,7 +614,7 @@ print(patient_id, 'weight in kilograms:', weight_kg)
 
 
 ```python
-# To call a function inside another function
+# To call a function inside another function:
 
 # floating number example:
 
@@ -636,7 +636,7 @@ print(type(patient_id))
 
 
 ```python
-# We can also do calculations inside the print function
+# We can also do calculations inside the print function:
 
 print('weight in lbs:', 2.2*weight_kg)
 ```
@@ -647,7 +647,7 @@ print('weight in lbs:', 2.2*weight_kg)
 
 ```python
 print(weight_kg)
-# *Note: we did not save over the variable
+# *Note: We did not save over the variable.
 ```
 
     60.3
