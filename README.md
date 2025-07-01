@@ -1022,7 +1022,7 @@ print('"-3" element:', odds[-3])
 
 ```python
 names= ['Curie', 'Darwig', 'Turing']
-# Note typeo in Darwin's name
+# * Note typo in Darwin's name.
 print('names is originally:', names)
 ```
 
@@ -1153,7 +1153,7 @@ months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 
 sond = months[8:12]
 print('With known last position:', sond)
 
-# what if we don't know the last position:
+# If we don't know the last position:
 
 sond = months[8:len(months)]
 print('Using len() to get last entry:', sond)
@@ -1204,7 +1204,7 @@ print(odds[0])
 print(odds[1])
 print(odds[2])
 print(odds[3])
-# we get an error b/c 3 isn't there
+# We get an error because 3 isn't there.
 ```
 
     1
@@ -1230,7 +1230,7 @@ print(odds[3])
 
 ```python
 
-# Or we can code for a loop
+# Or we can code for a loop:
 
 odds = [1,3,5,7]
 
@@ -1395,7 +1395,7 @@ for filename in filenames:
 
 ```python
 # Making Choices
-# What if we want to write a script to decide something:
+# To write a script to decide something:
 
 # First, create variable number, then 'if', tells what to print
 num = 37
@@ -1431,7 +1431,7 @@ print('...after conditional')
 
 
 ```python
-# else/if example with 3 conditions:
+# Else/if example with 3 conditions:
 
 num = -3
 
@@ -1563,12 +1563,12 @@ else:
 ## Functions
 
 ```python
-# A function example
+# A function example:
 ```
 
 
 ```python
-# To change F to C values
+# To change F to C values:
 fahrenheit_val = 99
 celsius_val = ((fahrenheit_val -32)*(5/9))
 print(celsius_val)
@@ -1591,7 +1591,7 @@ print(celsius_val2)
 
 ```python
 def explicit_fahr_to_celsius(temp):
-    #Assign the converted value to a variable
+    # Assign the converted value to a variable:
     converted = ((temp-32)*(5/9))
     #Return the values of the new variable
     return converted
@@ -1600,9 +1600,9 @@ def explicit_fahr_to_celsius(temp):
 
 ```python
 def fahr_to_celsius(temp):
-    # Return converted values more efficiently using the return function without creating 
-    # a new variable. This code does the same thing as the previous function but it is more 
-    # explicit in explaining how the return command works. This combines the two previous lines of code.
+    # Return converts values more efficiently using the return function without creating 
+    # a new variable. This code does the same thing as the previous function, but it is more 
+    # explicit in explaining how the return command works. This code combines the two previous lines of code.
     
     return((temp-32)*(5/9))
 ```
@@ -1675,7 +1675,7 @@ print('Boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
 
 ```python
 print('Again, temperature in Kelvin was:', temp_kelvin)
-# Note that these variables are called local because they are in a function and do not exist outside of the function.
+# * Note that these variables are called local because they are in a function and do not exist outside of the function.
 ```
 
     Again, temperature in Kelvin was: 373.15
@@ -1683,7 +1683,7 @@ print('Again, temperature in Kelvin was:', temp_kelvin)
 
 
 ```python
-# To make the variable permanent, not in function:
+# To make the variable permanent, not within a function:
 
 temp_kelvin = fahr_to_kelvin(212.0)
 print('Temperature in Kelvin was:', temp_kelvin)
@@ -1754,7 +1754,7 @@ visualize('Python_Data/inflammation-01.csv')
 
 
 ```python
-# a function:
+# A function:
 
 def detect_problems(filename):
     
@@ -1818,7 +1818,7 @@ for filename in filenames[:3]:
 
 
 ```python
-# Let's create a new function
+# Let's create a new function:
 
 def offset_mean(data, target_mean_value):
     return(data - numpy.mean(data)) + target_mean_value
@@ -1826,7 +1826,7 @@ def offset_mean(data, target_mean_value):
 
 
 ```python
-# To test our function to see if it works, we can create testing data:
+# To test our function and see if it works, we can create testing data:
 
 z = numpy.zeros((2,2))
 print(offset_mean(z,3))
@@ -2179,12 +2179,13 @@ numpy.loadtxt('Python_Data/inflammation-01.csv', delimiter = ',')
 ## Defensive Programming
 
 ```python
-# To make sure our functions do what we want them to do. 
+# We use defensive programming to make sure our functions do what we want them to do. 
 # Just because there is no error, does not mean the function accomplishes the goal.
-# To do this, we add asssertions to our code. 
-# Assertion: a statement that something must be true at a certain point in the gporam
-# When python sees one, python does the function. If false, it stops.
+# To do this, we add asssertions to our code.
 ```
+An assertion is a statement that something must be true at a certain point in the program.
+When python sees one, python does the function. If false, it stops.
+
 
 
 ```python
@@ -2213,19 +2214,18 @@ print('total is:', total)
 
 
 
-```python
-# Because we told python that data should only contain positve values (assert) we get an assertion error.
-# A lot of code exists to check to make sure the other code is running correctly.
-```
+Because we told python that data should only contain positve values (assert) we get an assertion error.
+A lot of code exists to check to make sure the other code is running correctly.
 
 
-```python
-# 3 types of assertions:
-# pre-condition: someting that must be true at the start of a function.
-# post-condition: something is guaranteed to be true at the end of a function.
-# invariant: something must be true at all times during the execution of a function, within a code region.
 
-```
+
+There are 3 types of assertions:
+* pre-condition: someting that must be true at the start of a function.
+* post-condition: something is guaranteed to be true at the end of a function.
+* invariant: something must be true at all times during the execution of a function, within a code region.
+
+
 
 
 ```python
@@ -2353,7 +2353,7 @@ print(normalize_rectangle((0.0, 0.0, 5.0, 1.0)))
 ## Transcribing DNA into RNA
 
 ```python
-# Prompt the user to enter the input fasta file name
+# Prompt the user to enter the input fasta file name:
 
 input_file_name = input("Enter the name of the input fasta file")
 ```
@@ -2363,7 +2363,7 @@ input_file_name = input("Enter the name of the input fasta file")
 
 
 ```python
-# Open the input fasta file and read the DNA sequence
+# Open the input fasta file and read the DNA sequence:
 
 with open(input_file_name, "r") as input_file:
     dna_sequence = ""
@@ -2375,7 +2375,7 @@ with open(input_file_name, "r") as input_file:
 
 
 ```python
-# Transcribe the DNA to RNA
+# Transcribe the DNA to RNA:
 
 rna_sequence = ""
 for nucleotide in dna_sequence:
@@ -2387,7 +2387,7 @@ for nucleotide in dna_sequence:
 
 
 ```python
-# Prompt user to enter the output file name
+# Prompt user to enter the output file name:
 
 output_file_name = input("Enter the name of the output file: ")
 ```
@@ -2397,7 +2397,7 @@ output_file_name = input("Enter the name of the output file: ")
 
 
 ```python
-# Save the RNA sequence to a text file
+# Save the RNA sequence to a text file:
 
 with open(output_file_name, "w") as output_file:
     output_file.write(rna_sequence)
@@ -2423,7 +2423,7 @@ print(f"RNA: {rna_sequence}")
 ## Translating RNA into Proteins
 
 ```python
-# Prompt the user to enter the input RNA file name
+# Prompt the user to enter the input RNA file name:
 
 input_file_name = input("Enter the name of the input RNA file:")
 ```
@@ -2433,7 +2433,7 @@ input_file_name = input("Enter the name of the input RNA file:")
 
 
 ```python
-# Open the input RNA file and read the RNA sequence
+# Open the input RNA file and read the RNA sequence:
 
 with open(input_file_name, "r") as input_file:
     rna_sequence = input_file.read().strip()
@@ -2441,7 +2441,7 @@ with open(input_file_name, "r") as input_file:
 
 
 ```python
-# Define the codon table
+# Define the codon table:
 
 codon_table = {# Phenylalanine (F)
     'UUU': 'F', 'UUC': 'F',
@@ -2491,7 +2491,7 @@ codon_table = {# Phenylalanine (F)
 
 
 ```python
-# Translate RNA to protein
+# Translate RNA to protein:
 
 protein_sequence = " "
 for i in range(0, len(rna_sequence),3):
@@ -2505,7 +2505,7 @@ for i in range(0, len(rna_sequence),3):
 
 
 ```python
-# Prompt the user to enter the output file name
+# Prompt the user to enter the output file name:
 
 output_file_name = input("Enter the name of the output file:")
 ```
@@ -2515,7 +2515,7 @@ output_file_name = input("Enter the name of the output file:")
 
 
 ```python
-# Save the protein sequence to a text file
+# Save the protein sequence to a text file:
 
 with open(output_file_name,"w") as output_file:
     output_file.write(protein_sequence)
